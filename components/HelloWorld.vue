@@ -1,86 +1,41 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-  </div>
+ <div class="container">
+        <form class="form-signin login">
+          <div class="text-right">
+            <img class="login-bird" src="../assets/img/login-bird.png" alt="" width="80%">
+          </div>
+
+          <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+            <label for="inputEmail">Email</label>
+          </div>
+
+          <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <label for="inputPassword">Password</label>
+          </div>
+
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Recordar sesi&oacute;n
+            </label>
+            <a href="#" class="d-block">¿Has olvidado tu contrase&ntilde;a?</a>
+          </div>
+          <button class="btn btn-lg btn-primary" type="submit">Inicia sesi&oacute;n</button>
+          <a href="signup.html" class="d-block">Crear cuenta</a>
+        <div class="w-100 text-center">
+            <img src="../assets/img/mc-icon-login.png" width="80px">
+        </div>
+          <ul class="link-group">
+              <li>
+                  <a href="#">Sobre McMullan Birding</a>
+              </li>
+              <li>
+                  <a href="#">Sobre la aplicaci&oacute;n</a>
+              </li>
+          </ul>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -96,6 +51,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 h1, h2 {
   font-weight: normal;
 }

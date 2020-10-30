@@ -1,0 +1,70 @@
+
+a {
+   color: #6b5240;
+   text-decoration: none;
+}
+body {
+   font-size: 16px;
+   color: #6b5240;
+   display: block;
+   background-color: #DFE8B8;
+   background-image: url(../img/bg-top-01.png);
+   background-size: 100% auto;
+   background-repeat: no-repeat;
+   background-position: center top;
+}
+
+/*** LOGIN ***/
+.login-bird {margin-bottom: -15px;}
+.form-control {
+   height: inherit;
+}
+.form-signin.login {
+   position: relative;
+}
+.form-signin.login input {
+   background: url(../img/form-input.png) no-repeat;
+   background-size: 100% 100%;
+   border: none;
+}
+.form-signin.login .btn-primary {
+   background: url(../img/form-boton-01.png) no-repeat;
+   background-size: 100% 100%;
+   border: none;
+   padding: .75rem 1.5rem;
+   position: relative;
+   margin-bottom: 15px;
+}
+.form-signin.login .btn-primary:before {
+   content: "";
+   display: block;
+   width: 110px;
+   height: 70px;
+   position: absolute;
+   right: -90px;
+
+   background: url(../img/form-boton-bird.png) no-repeat;
+   background-size: 100% auto;
+}
+.link-group {
+   margin: 15px 0;
+   padding: 0;
+}
+.link-group li {
+   list-style: none;
+}
+.link-group li a {
+   color: #6b5240;
+}
+.link-group li a img {
+   width: 50px;
+}
+
+.form-signin.login legend {
+   color: #FFFFFF;
+   position: absolute;
+   top: 130px;
+   text-align: center;
+   font-size: 1rem;
+   text-indent: -30px;
+}
