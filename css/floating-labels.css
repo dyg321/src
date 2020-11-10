@@ -37,7 +37,8 @@ body {
 
 .form-label-group > input,
 .form-label-group > label {
-  padding: var(--input-padding-y) var(--input-padding-x);
+  /*padding: var(--input-padding-y) var(--input-padding-x);*/
+  padding: .75rem 1.5rem .75rem 2rem;
 }
 
 .form-label-group > label {

@@ -1,0 +1,152 @@
+
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add_location:before {
+  content: "\e900";
+}
+.icon-add:before {
+  content: "\e901";
+}
+.icon-arrow_back_ios:before {
+  content: "\e902";
+}
+.icon-arrow_back:before {
+  content: "\e903";
+}
+.icon-arrow_downward:before {
+  content: "\e904";
+}
+.icon-arrow_forward_ios:before {
+  content: "\e905";
+}
+.icon-arrow_forward:before {
+  content: "\e906";
+}
+.icon-arrow_upward:before {
+  content: "\e907";
+}
+.icon-bird-app:before {
+  content: "\e908";
+}
+.icon-bird_close:before {
+  content: "\e909";
+}
+.icon-bird_home:before {
+  content: "\e90a";
+}
+.icon-bird_title:before {
+  content: "\e90b";
+}
+.icon-birds:before {
+  content: "\e90c";
+}
+.icon-camera:before {
+  content: "\e90d";
+}
+.icon-check:before {
+  content: "\e90e";
+}
+.icon-close:before {
+  content: "\e90f";
+}
+.icon-directions_bike:before {
+  content: "\e910";
+}
+.icon-directions_walk:before {
+  content: "\e911";
+}
+.icon-document:before {
+  content: "\e912";
+}
+.icon-edit_location:before {
+  content: "\e913";
+}
+.icon-edit:before {
+  content: "\e914";
+}
+.icon-event:before {
+  content: "\e915";
+}
+.icon-home:before {
+  content: "\e916";
+}
+.icon-hotel:before {
+  content: "\e917";
+}
+.icon-keyboard_arrow_down:before {
+  content: "\e918";
+}
+.icon-keyboard_arrow_left:before {
+  content: "\e919";
+}
+.icon-keyboard_arrow_right:before {
+  content: "\e91a";
+}
+.icon-keyboard_arrow_up:before {
+  content: "\e91b";
+}
+.icon-local_parking:before {
+  content: "\e91c";
+}
+.icon-location:before {
+  content: "\e91d";
+}
+.icon-mcmullan:before {
+  content: "\e91e";
+}
+.icon-medical_services:before {
+  content: "\e91f";
+}
+.icon-menu:before {
+  content: "\e920";
+}
+.icon-music:before {
+  content: "\e921";
+}
+.icon-news:before {
+  content: "\e922";
+}
+.icon-people_alt:before {
+  content: "\e923";
+}
+.icon-person:before {
+  content: "\e924";
+}
+.icon-place_pin:before {
+  content: "\e925";
+}
+.icon-places:before {
+  content: "\e926";
+}
+.icon-restaurant:before {
+  content: "\e927";
+}
+.icon-save:before {
+  content: "\e928";
+}
+.icon-search:before {
+  content: "\e929";
+}
+.icon-star_alt:before {
+  content: "\e92a";
+}
+.icon-star_border:before {
+  content: "\e92b";
+}
+.icon-star:before {
+  content: "\e92c";
+}
