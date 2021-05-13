@@ -2,7 +2,7 @@
  <div class="wrapper bird-view">
         <nav class="navbar fixed-top navbar-light bg-light">
             <a class="navbar-brand sr-only">
-                Mc Mullan Birding
+                Enjoy Birding
             </a>
             <button v-on:click="toggleMenu" class="navbar-toggler" type="button"  aria-label="Toggle navigation">
             <img src="../img/icon-app.png" width="30" height="30" class="d-inline-block align-top" alt="Mc Mullan" loading="lazy">
@@ -23,10 +23,9 @@
                 <router-link class="nav-link" to="/login"><span>Cerrar sesión</span></router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about-mcmullan.html">Sobre McMullan Birding</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about-app.html">Sobre la aplicación</a>
+                <router-link class="nav-link" :to="{ name:'Pub', params: { id: 4 } }" >
+                  Sobre la aplicación
+                </router-link>
               </li>
               <li class="divider"><span class="sr-only">divider</span></li>
               <li class="title-group">Configurar idioma</li>
@@ -54,70 +53,50 @@
         <!-- NAVBAR END -->
         <div class="content-main">
 
-          <router-link to="/aves" class="box-icon top">
+          <router-link to="/home" class="box-icon top">
             <span class="icon-arrow_back"></span>
-            <span class="title">Volver al listado</span>
+            <span class="title">Volver al mapa</span>
           </router-link>
-          <div class="bird-view-box">
+          <div class="bird-view-box" v-if="ave.id">
               <div class="media-img">
-                <img src="../gallery/bird-list-03.jpg" class="mr-3" alt="McMullan Birding">
+                <img @click="index = 0" v-bind:src="photos[0].url" class="mr-3" alt="McMullan Birding">
               </div>
-
-              <ul class="nav nav-tabs justify-content-center menu-top" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="tab-item-01" data-toggle="tab" href="#tab-01" role="tab" aria-controls="place" aria-selected="true">
+              <div>
+                <b-tabs content-class="mt-3" class="nav-tabs menu-top">
+                  <b-tab active class="">
+                    <template #title>
                       <span class="icon-document"></span>
-                      <span class="title-bottom">Descripción</span>
-                  </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="tab-item-02" data-toggle="tab" href="#tab-02" role="tab" aria-controls="birds" aria-selected="false">
-                      <span class="icon-location"></span>
-                      <span class="title-bottom">Distribución</span>
-                  </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="tab-item-03" data-toggle="tab" href="#tab-02" role="tab" aria-controls="birds" aria-selected="false">
+                      <span class="title-bottom">General</span>
+                    </template>
+                    <div class="info-bird">
+                      <h5 class="mt-0 title">{{ave.nombre_comun}}</h5>
+                      <h6>{{ave.nombre_ingles}}</h6>
+                      <h6 class="mt-0 mb-1 font-italic">({{ave.title}})</h6>
+                      <div class="my-4" v-html="ave.description"></div>
+                      <h5>Descripción física</h5>
+                      <div class="my-4" v-html="ave.desc_fisica"></div>
+                      <h5>Descripción hábitat</h5>
+                      <div class="my-4" v-html="ave.desc_habitat"></div>
+                    </div>
+                  </b-tab>
+                  <b-tab class="">
+                    <template #title>
                       <span class="icon-camera"></span>
-                      <span class="title-bottom">Galería</span>
-                  </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="tab-item-04" data-toggle="tab" href="#tab-02" role="tab" aria-controls="birds" aria-selected="false">
-                      <span class="icon-music"></span>
-                      <span class="title-bottom">Vocalizaciones</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="tab-content tab-content-inside" id="myTabContent">
-                <div class="tab-pane fade show active" id="tab-01" role="tabpanel" aria-labelledby="place-tab">
-                  <div class="info-bird">
-                    <h5 class="mt-0 title">{{id}} TUCÁN ANDINO PIQUILAMINADO</h5>
-                    <div class="info-group">
-                      <h6>Especie:</h6>
-                      <p class="italic">Andigena laminirostris</p>
+                      <span class="title-bottom">Galería Flickr</span>
+                    </template>
+                    <div class="info-bird">
+                      <h5 class="mt-0 title">{{ave.nombre_comun}}</h5>
+                      <div class="container">
+                        <div id="gallery" class="row mt-4">
+                          <div class="col-6 mb-2"  v-for="(ph, i) in photos" :key="ph.id">
+                            <img @click="index = i" v-bind:src="ph.url" class="w-100">
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="info-group">
-                      <h6>Familia:</h6>
-                      <p>Ramphastidae</p>
-                    </div>
-                    <div class="info-group">
-                      <h6>Orden:</h6>
-                      <p>Picifiromes</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade show" id="tab-02" role="tabpanel" aria-labelledby="place-tab">
-                  Content 2
-                </div>
-                <div class="tab-pane fade show" id="tab-02" role="tabpanel" aria-labelledby="place-tab">
-                  Content 3
-                </div>
-                <div class="tab-pane fade show" id="tab-02" role="tabpanel" aria-labelledby="place-tab">
-                  Content 4
-                </div>
+                  </b-tab>
+                </b-tabs>
               </div>
-
           </div>
         </div>
         <!-- CONTENT MAIN END -->
@@ -130,51 +109,51 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="places.html">
+                <router-link :to="{ name:'Home' }" class="nav-link active" >
                     <span class="icon-bird_home"></span>
                     <span class="title-bottom">Aves y Lugares</span>
-                </a>
+                </router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="premium.html">
-                    <span class="icon-star"></span>
-                    <span class="title-bottom">Premium</span>
-                </a>
+                <router-link class="nav-link" :to="{ name:'Pub', params: { id: 5 } }" >
+                  <span class="icon-star"></span>
+                  <span class="title-bottom">Premium</span>
+                </router-link>
               </li>
             </ul>
         </div>
+        <vue-gallery-slideshow :images="photos" :index="index" @close="index = null"></vue-gallery-slideshow>
     </div> <!-- WRAPPER END -->
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
+import VueGallerySlideshow from 'vue-gallery-slideshow'
 export default {
   name: 'Ave',
+  components: {
+    VueGallerySlideshow
+  },
   data () {
     return {
       id: '',
+      index: null,
       showmenu: false
     }
   },
   created: function () {
-    this.id = this.$route.params.id
+    let id = this.$route.params.id
+    this.getById(id)
   },
   methods: {
+    ...mapActions('ave', ['getById']),
     toggleMenu: function (ev) {
       this.showmenu = !this.showmenu
     }
   },
   computed: {
-    ...mapState('account', ['user'])
+    ...mapState('account', ['user']),
+    ...mapState('ave', ['ave', 'photos'])
   }
 }
 </script>
-<style>
-@import '../css/icons.css';
-@import '../css/floating-labels.css';
-@import '../css/theme-birds.css';
-
-body {
-   background-color: #DFE8B8;
-}
-</style>

@@ -1,7 +1,15 @@
 <template>
   <div id="app">
      <div v-if="alert.message" :class="`alert ${alert.type}`">{{alert.message}}</div>
-    <router-view/>
+      <div class="loader" v-if="alert.loading">
+        <img src="./img/bird-flying.gif">
+      </div>
+      <div class="spinner-box" v-if="alert.loading">
+        <div class="circle-border">
+          <div class="circle-core"></div>
+        </div>
+      </div>
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
@@ -32,6 +40,9 @@ export default {
 <style>
 @import 'bootstrap/dist/css/bootstrap.css';
 @import 'bootstrap-vue/dist/bootstrap-vue.css';
+@import './css/icons.css';
+@import './css/floating-labels.css';
+@import './css/theme-birds.css';
 @font-face {
   font-family: 'icomoon';
   src:  url('fonts/icomoon.eot?rhtveh');

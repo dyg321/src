@@ -43,36 +43,21 @@
           </li>
         </ul>
         </div>
-        <div class="my-lg-0 button-search">
-          <router-link :to="{ name:'Buscar' }">
-            <span class="icon-search"></span>
-            <span class="text-search">Buscar</span>
-          </router-link>
-        </div>
     </nav>
     <!-- NAVBAR END -->
 
-    <div class="content-main">
-        <ul class="nav nav-tabs justify-content-center menu-top" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <router-link to="/home" class="nav-link" id="place-tab">
-                <span class="icon-places"></span>
-                <span class="title-bottom">Lugares</span>
-            </router-link>
-          </li>
-          <li class="nav-item" role="presentation">
-            <router-link to="/aves" class="nav-link active" id="birds-tab">
-                <span class="icon-birds"></span>
-                <span class="title-bottom">Aves</span>
-            </router-link>
-          </li>
-        </ul>
+    <div class="content-main search-content">
+        <h3 class="title">Buscador de aves</h3>
+        <div class="search-form">
+          <input type="text" v-model="form.search" v-on:input="getResults" class="test" ref="search" placeholder="Buscar...">
+          <span class="icon-search"></span>
+        </div>
         <div class="tab-content" id="myTabContent">
           <!-- TAB CONTENT 1 -->
           <div class="tab-pane birds-box show active" id="birds" role="tabpanel" aria-labelledby="birds-tab">
             <div class="content-scroll">
                 <ul class="list-unstyled birds-list">
-                  <li class="media"  v-for="item in aves" :key="item.id">
+                  <li class="media"  v-for="item in results" :key="item.id">
                     <div class="media-body">
                         <router-link :to="{ name:'Ave', params: { id: item.id } }">
                           <h5 class="mt-0 text-uppercase">{{item.nombre_comun}}</h5>
@@ -123,30 +108,42 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'Aves',
+  name: 'Buscar',
   data () {
     return {
-      showmenu: false
+      showmenu: false,
+      form: {search: null}
     }
   },
   methods: {
     toggleMenu: function (ev) {
       this.showmenu = !this.showmenu
     },
-    ...mapActions('ave', ['getAll'])
+    ...mapActions('ave', ['search']),
+    focusInput () {
+      this.$refs.search.focus()
+    },
+    getResults: function (ev) {
+      if (this.form.search.length < 4) return false
+      this.search(this.form.search)
+    }
   },
   computed: {
     ...mapState('account', ['user']),
-    ...mapState('ave', ['aves'])
+    ...mapState('ave', ['results'])
   },
   created () {
-    this.getAll()
+    // this.getAll()
+
   },
   filters: {
     cut: function (value) {
       if (!value) return ''
       return value.slice(2)
     }
+  },
+  mounted () {
+    this.focusInput()
   }
 }
 </script>

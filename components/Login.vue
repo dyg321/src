@@ -22,17 +22,14 @@
           </div>
           <button  class="btn btn-lg btn-primary" :disabled="status.loggingIn">Inicia sesi&oacute;n</button >
           <router-link to="/home" class="d-block">Crear cuenta</router-link>
-        <div class="w-100 text-center">
-            <img src="../img/mc-icon-login.png" width="80px">
-        </div>
           <ul class="link-group">
               <li>
-                  <router-link to="/home" >Sobre McMullan Birding</router-link>
-              </li>
-              <li>
-                  <router-link to="/home" >Sobre la aplicaci&oacute;n</router-link>
+                <router-link :to="{ name:'Pub', params: { id: 4 } }" >Sobre la aplicaci&oacute;n</router-link>
               </li>
           </ul>
+        <div class="w-100 text-center">
+            <img src="../img/Icon-144.png" width="80px">
+        </div>
         </form>
     </div>
 </template>
@@ -68,12 +65,3 @@ export default {
   }
 }
 </script>
-<style>
-@import '../css/icons.css';
-@import '../css/floating-labels.css';
-@import '../css/theme-birds.css';
-
-body {
-   background-color: #DFE8B8;
-}
-</style>
